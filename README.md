@@ -2,6 +2,7 @@
 This is a simple test API which can be used for finding Geolocation of address
 
 Requirements:
+
       1: Python
       
       2: Flask
@@ -12,6 +13,7 @@ Requirements:
  
  
 Contents:
+
       1: GeoCoder_api.py : This the python script for the API
       
       2: Townlands__OSi_National_Placenames_Gazetteer.csv: A file which acts a source for the geolocations of the address
