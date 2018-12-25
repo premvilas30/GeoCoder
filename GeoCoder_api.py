@@ -7,7 +7,7 @@ from flask import request,Response
 app = flask.Flask(__name__)
 #app.config["DEBUG"] = True
 
-
+#this function maps the address with the corrosponding GeoCodes
 def create_new_file(address_to_Check):
     #address_to_Check = pd.read_csv(source_filepath)
     splitted_Address = address_to_Check['Address'].str.split(',')
@@ -29,6 +29,7 @@ def create_new_file(address_to_Check):
     #splitted_Address.to_csv(dest_filepath,)
     return splitted_Address
 
+#this a basic form which will facilitate user to upload a file of addresses and get the file with GeoCodes
 @app.route('/')
 def form():
     return """
@@ -45,6 +46,7 @@ def form():
         </html>
     """
 
+# This is the app which takes data from the input CSV file, calls the mapping function and sends the results back to user in the form of a CSV
 @app.route('/submit', methods=["POST"])
 def transform_view():
     request_file = request.files['data_file']
