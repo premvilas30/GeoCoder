@@ -51,7 +51,7 @@ def transform_view():
     if not request_file:
         return "No file"
 
-    file_contents = request_file.stream.read().decode("utf-8")
+    file_contents = request_file.stream.read()#.decode("utf-8")
     file_contents = file_contents.replace('"','')
     #print (type(file_contents.splitlines()))
     #print(file_contents)
